@@ -16,8 +16,10 @@ class ArtisteController extends Controller
         return Inertia::render('Admin/ArtisteAdd');
     }
 
-    public function store () {
-        dd(request());
+    public function store (Request $request) {
+        $data = request()->all();
+
+        dd($data);
     }
 
     public function show () {

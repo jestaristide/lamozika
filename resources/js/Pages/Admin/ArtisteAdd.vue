@@ -24,7 +24,7 @@
                                     <label for="birthday">Date de naissance</label>
                                     <div class="input-group">
                                         <span class="input-group-text"><span class="far fa-calendar-alt"></span></span>
-                                        <input data-datepicker="" class="form-control datepicker-input" v-model="newArtiste.date_naissance" type="text" placeholder="dd/mm/yyyy" required="">
+                                        <input class="form-control datepicker-input" v-model="newArtiste.date_naissance" type="date" placeholder="dd/mm/yyyy" required="">
                                      </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
@@ -173,7 +173,9 @@ export default {
 
             console.log(this.newArtiste.rs, this.rsNames, this.$inertia)
 
-            this.$inertia.post('/lm-admin/artiste', this.newArtiste)
+            this.$inertia.post('/lm-admin/artiste', this.newArtiste).then((response) => {
+                console.log(response)
+            })
         }
     }
 }

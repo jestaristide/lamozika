@@ -8,7 +8,7 @@
                                     <table class="table table-centered table-nowrap mb-0 rounded">
                                         <thead class="thead-light">
                                             <tr>
-                                                <th class="border-0">#</th>
+                                                <th class="border-0"># {{ artistes }}</th>
                                                 <th class="border-0">Nom et Prenoms</th>
                                                 <th class="border-0">Nom de scène</th>
                                                 <th class="border-0">Téléphone</th>
@@ -19,7 +19,7 @@
                                         </thead>
                                         <tbody>
                                             <!-- Item -->
-                                            <tr>
+                                            <tr v-for="(row, key) in artistes" :key="key">
                                                 <td class="border-0"><a href="#" class="text-primary font-weight-bold">1</a> </td>
                                                 <td class="border-0 font-weight-bold"><span class="icon icon-xs icon-gray w-30"><span class="fas fa-globe-europe"></span></span>Direct</td>
                                                 <td class="border-0">
@@ -200,6 +200,7 @@ import ArtisteLayout from './ArtisteLayout'
 export default {
     components : {
         ArtisteLayout
-    }
+    },
+    props: ['artistes'],
 }
 </script>

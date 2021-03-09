@@ -24,8 +24,9 @@ class CreateArtistesTable extends Migration
             $table->string('nom_scene');
             $table->string('specialite')->nullable();
             $table->text('description')->nullable();
-            $table->text('email')->nullable();
-            $table->text('tel')->nullable();
+            $table->string('email')->nullable();
+            $table->string('tel')->nullable();
+            $table->string('genre')->nullable();
             $table->string('slug')->unique();
             $table->timestamps();
         });

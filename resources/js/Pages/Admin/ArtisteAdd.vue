@@ -55,7 +55,7 @@
                                 <div class="col-md-12 mb-3">
                                     <div class="form-group">
                                         <label for="email">Desciption</label>
-                                        <input class="form-control" v-model="newArtiste.description" type="text" placeholder="name@company.com" required="">
+                                        <textarea class="form-control" v-model="newArtiste.description" cols="30" rows="10"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -94,7 +94,7 @@
                             <h2 class="h5 my-4">Reseaux sociaux</h2>
                             <a @click="addNewRs" class="badge super-badge badge-lg badge-warning"><span class="fas fa-plus mr-2"></span>Ajouter</a>
 
-                            <div v-for="(item, index) in newArtiste.rs" :key="index">
+                            <div v-for="(item, index) in newArtiste.rsociaux" :key="index">
                                 <div class="row">
                                     <div class="col-md-4">
                                         <div>
@@ -147,20 +147,22 @@ export default {
     components : {
         ArtisteLayout
     },
+    props:{artiste:Object},
     data() {
         return {
             newArtiste : {
                 'nom':'',
                 'prenoms':'',
                 'date_naissance':'',
-                'rs': [],
+                'rsociaux': [],
                 _token: this.$page.props.csrf_token,
             },
             newRs:{
                 'type':'',
                 'url':''
             },
-            rsNames: ['Facebook', 'YouTube', 'Instagram', 'Twitter', 'TikTok']
+            rsNames: ['Facebook', 'YouTube', 'Instagram', 'Twitter', 'TikTok'],
+            isUpdate: this.artiste ? true : false
         }
     },
     methods: {
@@ -168,12 +170,15 @@ export default {
             e.preventDefault()
             this.addNewRs()
             console.log(this.newArtiste, this.$page.props)
+            this.$inertia.post('/lm-admin/artiste', this.newArtiste).then((response) => {
+                console.log('dsfsdf 0 ' + response)
+            })
         },
         addNewRs() {
             if(this.newRs.type != '' && this.newRs.url != '')
             {
                 this.rsNames = this.rsNames.filter((rs) => { return rs != this.newRs.type})
-                this.newArtiste.rs.push(this.newRs)
+                this.newArtiste.rsociaux.push(this.newRs)
                 this.newRs = {
                     'type':'',
                     'url':''
@@ -181,9 +186,16 @@ export default {
             }
 
             console.log(this.newArtiste.rs, this.rsNames, this.$inertia)
-
-            this.$inertia.post('/lm-admin/artiste', this.newArtiste).then((response) => {
-                console.log(response)
+        }
+    },
+    mounted() {
+        if(this.isUpdate) {
+            this.newArtiste = this.artiste
+            this.newArtiste._token = this.$page.props.csrf_token
+            this.rsNames = this.rsNames.filter((rs) => {
+                this.newArtiste.rsociaux.forEach((element) => {
+                    return rs != element.type
+                })
             })
         }
     }

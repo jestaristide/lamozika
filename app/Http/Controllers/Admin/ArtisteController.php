@@ -11,12 +11,13 @@ use Illuminate\Support\Str;
 
 class ArtisteController extends Controller
 {
-    public function re() {
-        $artistes = Artiste::all();
-        return Inertia::render('Admin/Artiste', ['artistes' =>$artistes]);
+    public function all() {
+        return response()->json(Artiste::all());
     }
     public function index () {
-        return $this->re();
+        $artistes = Artiste::all();
+        Inertia::share('artistess', $artistes);
+        return Inertia::render('Admin/Artiste', ['artistes' =>$artistes]);
     }
 
     public function create () {
@@ -29,9 +30,25 @@ class ArtisteController extends Controller
         $data['date_naissance'] = \Carbon\Carbon::parse($data['date_naissance']);
         $reseaux_sociaux = $data['rs'];
         $data['slug'] = Str::slug($data['nom_scene'], '-');
-        unset($data['rs']);
 
-        $nArtiste = Artiste::create($data);
+
+        $req = array (
+            'nom'=>$data['nom'],
+            'prenoms'=>$data['prenoms'],
+            'date_naissance'=> $data['date_naissance'],
+            'email'=>$data['email'],
+            'tel'=>$data['tel'],
+            'nom_scene'=>$data['nom_scene'],
+            'slug'=>$data['slug'],
+            'origine'=>$data['origine'],
+            'specialite'=>$data['specialite'],
+            'genre'=> $data['genre'],
+            'description'=>$data['description']
+        );
+
+        //return $req;
+
+        $nArtiste = Artiste::create($req);
 
         foreach($reseaux_sociaux as $r) {
             RSociaux::create(['artiste_id'=>$nArtiste->id, 'type'=>$r['type'], 'url'=>$r['url']]);
@@ -44,8 +61,9 @@ class ArtisteController extends Controller
 
     }
 
-    public function edit () {
-        return Inertia::render('Admin/ArtisteEdit');
+    public function edit ($id) {
+        $artiste = Artiste::where('id','=', $id)->with('rsociaux')->first();
+        return Inertia::render('Admin/ArtisteAdd', ['artiste'=>$artiste]);
     }
 
     public function update () {

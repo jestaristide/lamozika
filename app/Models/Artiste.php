@@ -9,7 +9,7 @@ class Artiste extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nom', 'prenoms', 'date_naissance', 'origine', 'cin', 'adresse', 'nom_scene', 'description', 'slug'];
+    protected $fillable = ['nom', 'prenoms', 'date_naissance', 'origine', 'cin', 'adresse', 'nom_scene', 'description', 'slug', 'email', 'tel'];
 
     public function rsociaux() {
         return $this->hasMany(RSociaux::class);

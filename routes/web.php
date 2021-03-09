@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ArtisteController;
+use App\Http\Controllers\Admin\MusiqueController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -45,4 +46,11 @@ Route::resource('lm-admin/artiste', ArtisteController::class, ['names' => [
     'show' => 'artiste.show',
     'edit' => 'artiste.edit',
     'create' => 'artiste.create',
+]]);
+
+Route::resource('administration/musique', MusiqueController::class, ['names' => [
+    'index' => 'musique.index',
+    'show' => 'musique.show',
+    'edit' => 'musique.edit',
+    'create' => 'musique.create',
 ]]);

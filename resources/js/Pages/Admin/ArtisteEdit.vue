@@ -99,6 +99,9 @@ import ArtisteLayout from './ArtisteLayout'
 export default {
     components : {
         ArtisteLayout
+    },
+    props:{
+        artiste:Object
     }
 }
 </script>

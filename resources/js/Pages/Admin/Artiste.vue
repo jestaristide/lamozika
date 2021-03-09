@@ -25,7 +25,7 @@
                                                 <td class="border-0">{{ row.nom_scene }}</td>
                                                 <td class="border-0">{{ row.tel }}</td>
                                                 <td class="border-0">{{ row.email }}</td>
-                                                <td class="border-0">{{  }}</td>
+                                                <td class="border-0"></td>
                                                 <td class="border-0 text-success">
                                                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center">
                                                         <div class="btn-group">
@@ -38,7 +38,7 @@
                                                                 <inertia-link :href="route('artiste.edit', 1)" class="dropdown-item">
                                                                     <span class="fas fa-eye mr-2" />Prevoir
                                                                 </inertia-link>
-                                                                <inertia-link :href="route('artiste.edit', 1)" class="dropdown-item">
+                                                                <inertia-link :href="route('artiste.edit', row.id)" class="dropdown-item">
                                                                     <span class="fas fa-edit mr-2" />Modifier
                                                                 </inertia-link>
                                                                 <a class="dropdown-item text-danger" href="#">
@@ -67,14 +67,33 @@ export default {
     components : {
         ArtisteLayout
     },
-    props: ['artistes'],
+    props: {
+        //artistes: Array
+    },
 
-    created : () => {
-        console.log(this)
+    data () {
+        return {
+            artistes: ''
+        }
+    },
+
+    created () {
+
+        console.log(this.props)
     },
 
     mounted() {
-        console.log(this)
+        this.loadData()
+        console.log(this._self._uid)
+    },
+    methods : {
+        loadData () {
+            axios.get('/api/artiste')
+                .then( (response) => {
+                    console.log(response.data);
+                    this.artistes = response.data;
+                })
+        }
     }
 }
 </script>

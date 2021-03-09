@@ -3815,140 +3815,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _ArtisteLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ArtisteLayout */ "./resources/js/Pages/Admin/ArtisteLayout.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+var _this = undefined;
+
 //
 //
 //
@@ -4017,7 +3885,13 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     ArtisteLayout: _ArtisteLayout__WEBPACK_IMPORTED_MODULE_0__.default
   },
-  props: ['artistes']
+  props: ['artistes'],
+  created: function created() {
+    console.log(_this);
+  },
+  mounted: function mounted() {
+    console.log(this);
+  }
 });
 
 /***/ }),
@@ -4034,6 +3908,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _ArtisteLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ArtisteLayout */ "./resources/js/Pages/Admin/ArtisteLayout.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -34373,9 +34256,7 @@ var render = function() {
                 [
                   _c("thead", { staticClass: "thead-light" }, [
                     _c("tr", [
-                      _c("th", { staticClass: "border-0" }, [
-                        _vm._v("# " + _vm._s(_vm.artistes))
-                      ]),
+                      _c("th", { staticClass: "border-0" }, [_vm._v("#")]),
                       _vm._v(" "),
                       _c("th", { staticClass: "border-0" }, [
                         _vm._v("Nom et Prenoms")
@@ -34401,553 +34282,139 @@ var render = function() {
                   _vm._v(" "),
                   _c(
                     "tbody",
-                    [
-                      _vm._l(_vm.artistes, function(row, key) {
-                        return _c("tr", { key: key }, [
-                          _c("td", { staticClass: "border-0" }, [
-                            _c(
-                              "a",
-                              {
-                                staticClass: "text-primary font-weight-bold",
-                                attrs: { href: "#" }
-                              },
-                              [_vm._v("1")]
-                            )
-                          ]),
-                          _vm._v(" "),
+                    _vm._l(_vm.artistes, function(row, key) {
+                      return _c("tr", { key: key }, [
+                        _c("td", { staticClass: "border-0" }, [
                           _c(
-                            "td",
-                            { staticClass: "border-0 font-weight-bold" },
+                            "a",
+                            {
+                              staticClass: "text-primary font-weight-bold",
+                              attrs: { href: "#" }
+                            },
+                            [_vm._v(_vm._s(row.id))]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", { staticClass: "border-0 font-weight-bold" }, [
+                          _vm._v(_vm._s(row.nom + " " + row.prenoms))
+                        ]),
+                        _vm._v(" "),
+                        _c("td", { staticClass: "border-0" }, [
+                          _vm._v(_vm._s(row.nom_scene))
+                        ]),
+                        _vm._v(" "),
+                        _c("td", { staticClass: "border-0" }, [
+                          _vm._v(_vm._s(row.tel))
+                        ]),
+                        _vm._v(" "),
+                        _c("td", { staticClass: "border-0" }, [
+                          _vm._v(_vm._s(row.email))
+                        ]),
+                        _vm._v(" "),
+                        _c("td", { staticClass: "border-0" }, [
+                          _vm._v(_vm._s())
+                        ]),
+                        _vm._v(" "),
+                        _c("td", { staticClass: "border-0 text-success" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center"
+                            },
                             [
-                              _c(
-                                "span",
-                                { staticClass: "icon icon-xs icon-gray w-30" },
-                                [
-                                  _c("span", {
-                                    staticClass: "fas fa-globe-europe"
-                                  })
-                                ]
-                              ),
-                              _vm._v("Direct")
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("td", { staticClass: "border-0" }, [
-                            _vm._v(
-                              "\n                                                Direct\n                                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("td", { staticClass: "border-0" }, [
-                            _vm._v(
-                              "\n                                               -\n                                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("td", { staticClass: "border-0" }, [
-                            _vm._v(
-                              "\n                                               --\n                                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("td", { staticClass: "border-0" }, [
-                            _vm._v(
-                              "\n                                                56\n                                            "
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("td", { staticClass: "border-0 text-success" }, [
-                            _c(
-                              "div",
-                              {
-                                staticClass:
-                                  "d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center"
-                              },
-                              [
-                                _c("div", { staticClass: "btn-group" }, [
-                                  _c(
-                                    "button",
-                                    {
-                                      staticClass:
-                                        "btn btn-link text-dark dropdown-toggle dropdown-toggle-split m-0 p-0",
-                                      attrs: {
-                                        "data-toggle": "dropdown",
-                                        "aria-haspopup": "true",
-                                        "aria-expanded": "false"
-                                      }
-                                    },
-                                    [
-                                      _c(
-                                        "span",
-                                        { staticClass: "icon icon-sm" },
-                                        [
-                                          _c("span", {
-                                            staticClass:
-                                              "fas fa-ellipsis-h icon-dark"
-                                          })
-                                        ]
-                                      )
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    { staticClass: "dropdown-menu" },
-                                    [
-                                      _c(
-                                        "inertia-link",
-                                        {
-                                          staticClass: "dropdown-item",
-                                          attrs: {
-                                            href: _vm.route("artiste.edit", 1)
-                                          }
-                                        },
-                                        [
-                                          _c("span", {
-                                            staticClass: "fas fa-eye mr-2"
-                                          }),
-                                          _vm._v(
-                                            "Prevoir\n                                                            "
-                                          )
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "inertia-link",
-                                        {
-                                          staticClass: "dropdown-item",
-                                          attrs: {
-                                            href: _vm.route("artiste.edit", 1)
-                                          }
-                                        },
-                                        [
-                                          _c("span", {
-                                            staticClass: "fas fa-edit mr-2"
-                                          }),
-                                          _vm._v(
-                                            "Modifier\n                                                            "
-                                          )
-                                        ]
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "a",
-                                        {
+                              _c("div", { staticClass: "btn-group" }, [
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass:
+                                      "btn btn-link text-dark dropdown-toggle dropdown-toggle-split m-0 p-0",
+                                    attrs: {
+                                      "data-toggle": "dropdown",
+                                      "aria-haspopup": "true",
+                                      "aria-expanded": "false"
+                                    }
+                                  },
+                                  [
+                                    _c(
+                                      "span",
+                                      { staticClass: "icon icon-sm" },
+                                      [
+                                        _c("span", {
                                           staticClass:
-                                            "dropdown-item text-danger",
-                                          attrs: { href: "#" }
-                                        },
-                                        [
-                                          _c("span", {
-                                            staticClass: "fas fa-trash-alt mr-2"
-                                          }),
-                                          _vm._v(
-                                            "Supprimer\n                                                            "
-                                          )
-                                        ]
-                                      )
-                                    ],
-                                    1
-                                  )
-                                ])
-                              ]
-                            )
-                          ])
-                        ])
-                      }),
-                      _vm._v(" "),
-                      _c("tr", [
-                        _c("td", [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "text-primary font-weight-bold",
-                              attrs: { href: "#" }
-                            },
-                            [_vm._v("2")]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", { staticClass: "font-weight-bold" }, [
-                          _c(
-                            "span",
-                            { staticClass: "icon icon-xs icon-info w-30" },
-                            [_c("span", { staticClass: "fab fa-google" })]
-                          ),
-                          _vm._v("Google Search")
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(
-                            "\n                                                Search / Organic\n                                            "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(
-                            "\n                                                -\n                                            "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(
-                            "\n                                               --\n                                            "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _c(
-                            "div",
-                            { staticClass: "row d-flex align-items-center" },
-                            [
-                              _c(
-                                "div",
-                                { staticClass: "col-12 col-xl-2 px-0" },
-                                [
-                                  _c(
-                                    "div",
-                                    { staticClass: "small font-weight-bold" },
-                                    [_vm._v("18%")]
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "col-12 col-xl-10 px-0 px-xl-1"
-                                },
-                                [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass: "progress progress-lg mb-0"
-                                    },
-                                    [
-                                      _c("div", {
-                                        staticClass: "progress-bar bg-primary",
-                                        staticStyle: { width: "18%" },
+                                            "fas fa-ellipsis-h icon-dark"
+                                        })
+                                      ]
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "dropdown-menu" },
+                                  [
+                                    _c(
+                                      "inertia-link",
+                                      {
+                                        staticClass: "dropdown-item",
                                         attrs: {
-                                          role: "progressbar",
-                                          "aria-valuenow": "18",
-                                          "aria-valuemin": "0",
-                                          "aria-valuemax": "100"
+                                          href: _vm.route("artiste.edit", 1)
                                         }
-                                      })
-                                    ]
-                                  )
-                                ]
-                              )
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", { staticClass: "text-success" }, [
-                          _c("span", { staticClass: "fas fa-angle-up" }),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "font-weight-bold" }, [
-                            _vm._v("17.67%")
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("tr", [
-                        _c("td", [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "text-primary font-weight-bold",
-                              attrs: { href: "#" }
-                            },
-                            [_vm._v("3")]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", { staticClass: "font-weight-bold" }, [
-                          _c(
-                            "span",
-                            { staticClass: "icon icon-xs icon-danger w-30" },
-                            [_c("span", { staticClass: "fab fa-youtube" })]
-                          ),
-                          _vm._v(" youtube.com")
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(
-                            "\n                                                Social\n                                            "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "small font-weight-bold",
-                              attrs: { href: "#" }
-                            },
-                            [_vm._v("Arts and Entertainment")]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(
-                            "\n                                               #2\n                                            "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _c(
-                            "div",
-                            { staticClass: "row d-flex align-items-center" },
-                            [
-                              _c(
-                                "div",
-                                { staticClass: "col-12 col-xl-2 px-0" },
-                                [
-                                  _c(
-                                    "div",
-                                    { staticClass: "small font-weight-bold" },
-                                    [_vm._v("18%")]
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "col-12 col-xl-10 px-0 px-xl-1"
-                                },
-                                [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass: "progress progress-lg mb-0"
-                                    },
-                                    [
-                                      _c("div", {
-                                        staticClass: "progress-bar bg-primary",
-                                        staticStyle: { width: "18%" },
+                                      },
+                                      [
+                                        _c("span", {
+                                          staticClass: "fas fa-eye mr-2"
+                                        }),
+                                        _vm._v(
+                                          "Prevoir\n                                                            "
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "inertia-link",
+                                      {
+                                        staticClass: "dropdown-item",
                                         attrs: {
-                                          role: "progressbar",
-                                          "aria-valuenow": "18",
-                                          "aria-valuemin": "0",
-                                          "aria-valuemax": "100"
+                                          href: _vm.route("artiste.edit", 1)
                                         }
-                                      })
-                                    ]
-                                  )
-                                ]
-                              )
+                                      },
+                                      [
+                                        _c("span", {
+                                          staticClass: "fas fa-edit mr-2"
+                                        }),
+                                        _vm._v(
+                                          "Modifier\n                                                            "
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass:
+                                          "dropdown-item text-danger",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _c("span", {
+                                          staticClass: "fas fa-trash-alt mr-2"
+                                        }),
+                                        _vm._v(
+                                          "Supprimer\n                                                            "
+                                        )
+                                      ]
+                                    )
+                                  ],
+                                  1
+                                )
+                              ])
                             ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(
-                            "\n                                                -\n                                            "
-                          )
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("tr", [
-                        _c("td", [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "text-primary font-weight-bold",
-                              attrs: { href: "#" }
-                            },
-                            [_vm._v("4")]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", { staticClass: "font-weight-bold" }, [
-                          _c(
-                            "span",
-                            { staticClass: "icon icon-xs icon-purple w-30" },
-                            [_c("span", { staticClass: "fab fa-yahoo" })]
-                          ),
-                          _vm._v(" yahoo.com")
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(
-                            "\n                                                Referral\n                                            "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "small font-weight-bold",
-                              attrs: { href: "#" }
-                            },
-                            [_vm._v("News and Media")]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(
-                            "\n                                               #11\n                                            "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _c(
-                            "div",
-                            { staticClass: "row d-flex align-items-center" },
-                            [
-                              _c(
-                                "div",
-                                { staticClass: "col-12 col-xl-2 px-0" },
-                                [
-                                  _c(
-                                    "div",
-                                    { staticClass: "small font-weight-bold" },
-                                    [_vm._v("8%")]
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "col-12 col-xl-10 px-0 px-xl-1"
-                                },
-                                [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass: "progress progress-lg mb-0"
-                                    },
-                                    [
-                                      _c("div", {
-                                        staticClass: "progress-bar bg-primary",
-                                        staticStyle: { width: "8%" },
-                                        attrs: {
-                                          role: "progressbar",
-                                          "aria-valuenow": "8",
-                                          "aria-valuemin": "0",
-                                          "aria-valuemax": "100"
-                                        }
-                                      })
-                                    ]
-                                  )
-                                ]
-                              )
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", { staticClass: "text-danger" }, [
-                          _c("span", { staticClass: "fas fa-angle-down" }),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "font-weight-bold" }, [
-                            _vm._v("9.30%")
-                          ])
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("tr", [
-                        _c("td", [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "text-primary font-weight-bold",
-                              attrs: { href: "#" }
-                            },
-                            [_vm._v("5")]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", { staticClass: "font-weight-bold" }, [
-                          _c(
-                            "span",
-                            { staticClass: "icon icon-xs icon-info w-30" },
-                            [_c("span", { staticClass: "fab fa-twitter" })]
-                          ),
-                          _vm._v(" twitter.com")
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(
-                            "\n                                                Social\n                                            "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "small font-weight-bold",
-                              attrs: { href: "#" }
-                            },
-                            [_vm._v("Social Networks")]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(
-                            "\n                                            #4\n                                            "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _c(
-                            "div",
-                            { staticClass: "row d-flex align-items-center" },
-                            [
-                              _c(
-                                "div",
-                                { staticClass: "col-12 col-xl-2 px-0" },
-                                [
-                                  _c(
-                                    "div",
-                                    { staticClass: "small font-weight-bold" },
-                                    [_vm._v("4%")]
-                                  )
-                                ]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "div",
-                                {
-                                  staticClass: "col-12 col-xl-10 px-0 px-xl-1"
-                                },
-                                [
-                                  _c(
-                                    "div",
-                                    {
-                                      staticClass: "progress progress-lg mb-0"
-                                    },
-                                    [
-                                      _c("div", {
-                                        staticClass: "progress-bar bg-primary",
-                                        staticStyle: { width: "4%" },
-                                        attrs: {
-                                          role: "progressbar",
-                                          "aria-valuenow": "4",
-                                          "aria-valuemin": "0",
-                                          "aria-valuemax": "100"
-                                        }
-                                      })
-                                    ]
-                                  )
-                                ]
-                              )
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("td", [
-                          _vm._v(
-                            "\n                                                -\n                                            "
                           )
                         ])
                       ])
-                    ],
-                    2
+                    }),
+                    0
                   )
                 ]
               )
@@ -35242,6 +34709,46 @@ var render = function() {
                               return
                             }
                             _vm.$set(_vm.newArtiste, "tel", $event.target.value)
+                          }
+                        }
+                      })
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "row" }, [
+                  _c("div", { staticClass: "col-md-12 mb-3" }, [
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", { attrs: { for: "email" } }, [
+                        _vm._v("Desciption")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.newArtiste.description,
+                            expression: "newArtiste.description"
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          placeholder: "name@company.com",
+                          required: ""
+                        },
+                        domProps: { value: _vm.newArtiste.description },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.newArtiste,
+                              "description",
+                              $event.target.value
+                            )
                           }
                         }
                       })

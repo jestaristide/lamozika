@@ -51,6 +51,15 @@
                                 </div>
                             </div>
 
+                            <div class="row">
+                                <div class="col-md-12 mb-3">
+                                    <div class="form-group">
+                                        <label for="email">Desciption</label>
+                                        <input class="form-control" v-model="newArtiste.description" type="text" placeholder="name@company.com" required="">
+                                    </div>
+                                </div>
+                            </div>
+
                             <h2 class="h5 my-4">Information de l'artiste</h2>
 
                             <div class="row">
@@ -101,12 +110,12 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="row">
                                 <div class="col-md-4 mb-3">
                                     <div>
                                         <label for="first_name">Nom</label>
-                                        
+
                                         <select class="form-select form-select-sm" v-model="newRs.type" aria-label="Selectionner le type">
                                             <option value="">--Selectionner--</option>
                                             <option v-for="(rsName, key) in rsNames" :key="key" :value="rsName">{{rsName}}</option>
@@ -153,7 +162,7 @@ export default {
             },
             rsNames: ['Facebook', 'YouTube', 'Instagram', 'Twitter', 'TikTok']
         }
-    }, 
+    },
     methods: {
         addNewArtiste (e) {
             e.preventDefault()

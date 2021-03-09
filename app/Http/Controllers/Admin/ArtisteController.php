@@ -11,9 +11,12 @@ use Illuminate\Support\Str;
 
 class ArtisteController extends Controller
 {
-    public function index () {
+    public function re() {
         $artistes = Artiste::all();
         return Inertia::render('Admin/Artiste', ['artistes' =>$artistes]);
+    }
+    public function index () {
+        return $this->re();
     }
 
     public function create () {
@@ -27,7 +30,7 @@ class ArtisteController extends Controller
         $reseaux_sociaux = $data['rs'];
         $data['slug'] = Str::slug($data['nom_scene'], '-');
         unset($data['rs']);
-        
+
         $nArtiste = Artiste::create($data);
 
         foreach($reseaux_sociaux as $r) {

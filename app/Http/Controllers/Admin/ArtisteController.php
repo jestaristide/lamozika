@@ -17,7 +17,7 @@ class ArtisteController extends Controller
     }
 
     public function store () {
-
+        dd(request());
     }
 
     public function show () {

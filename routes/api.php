@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\ArtisteController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\UploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('artiste', [ArtisteController::class, 'all']);
+Route::post('/admin/upload', [UploadController::class, 'store']);

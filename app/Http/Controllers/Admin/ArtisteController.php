@@ -16,7 +16,6 @@ class ArtisteController extends Controller
     }
     public function index () {
         $artistes = Artiste::all();
-        Inertia::share('artistess', $artistes);
         return Inertia::render('Admin/Artiste', ['artistes' =>$artistes]);
     }
 

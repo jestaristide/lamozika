@@ -28,6 +28,10 @@
     },
     "dependencies": {
         "bootstrap": "^4.6.0",
-        "bootstrap-vue": "^2.21.2"
+        "bootstrap-vue": "^2.21.2",
+        "filepond": "^4.25.2",
+        "filepond-plugin-file-validate-type": "^1.2.5",
+        "filepond-plugin-image-preview": "^4.6.5",
+        "vue-filepond": "^6.0.0"
     }
 }

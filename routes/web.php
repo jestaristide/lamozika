@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ArtisteController;
 use App\Http\Controllers\Admin\MusiqueController;
+use App\Http\Controllers\Admin\UploadController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -27,30 +28,34 @@ use Inertia\Inertia;
     ]);
 });*/
 
-Route::get('/', function () {
-   return Inertia::render('TestPage');
-});
-
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
 
-Route::resource('lm-admin', AdminController::class, ['names' => [
+Route::resource('administration', AdminController::class, ['names' => [
     'index' => 'admin.index',
     'show' => 'admin.show',
 ]])->only(['index', 'show']);
 
 
-Route::resource('lm-admin/artiste', ArtisteController::class, ['names' => [
+/*Route::resource('administration/artiste', ArtisteController::class, ['names' => [
     'index' => 'artiste.index',
     'show' => 'artiste.show',
     'edit' => 'artiste.edit',
     'create' => 'artiste.create',
-]]);
+]]);*/
 
-Route::resource('administration/musique', MusiqueController::class, ['names' => [
+/*Route::resource('administration/musique', MusiqueController::class, ['names' => [
     'index' => 'musique.index',
     'show' => 'musique.show',
     'edit' => 'musique.edit',
     'create' => 'musique.create',
-]]);
+]]);*/
+
+
+Route::prefix('administration')->group(function () {
+
+    Route::resource('musique',MusiqueController::class);
+    Route::resource('artiste', ArtisteController::class);
+
+});

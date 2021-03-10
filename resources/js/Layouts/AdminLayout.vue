@@ -48,7 +48,7 @@
                                     </inertia-link>
                                 </li>
                                 <li class="nav-item">
-                                    <inertia-link :href="route('artiste.create')" class="nav-link">
+                                    <inertia-link :href="route('musique.index')" class="nav-link">
                                         <span class="sidebar-icon"><span class="far fa-file-alt"></span></span>
                                         <span>Musiques</span>
                                     </inertia-link>

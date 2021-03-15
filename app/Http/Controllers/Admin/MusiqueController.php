@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Musique;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Inertia\Inertia;
 
 class MusiqueController extends Controller
@@ -18,27 +19,29 @@ class MusiqueController extends Controller
     public function create() {
         return Inertia::render('Admin/Musique/MusiqueAdd');
     }
-    
+
     public function store(Request $request)
     {
         $data = array(
-            'titre'=>$request->get('titre'),
-            'description'=>$request->get('description'),
-            'tags'=>$request->get('tags'),
-            'genre'=>$request->get('genre'),
-            'sous_genre'=>$request->get('sous_genre'),
-            'yt_link'=>$request->get('yt_link'),
-            'audio_link'=>$request->get('audio_link'),
-            'studio_enregistrement'=>$request->get('studio_enregistrement'),
-            'annee_enregistrement'=>$request->get('annee_enregistrement'),
-            'realisateur'=>$request->get('realisateur'),
-            'auteur'=>$request->get('auteur'),
-            'version'=>$request->get('version'),
-            'pochette'=>$request->get('pochette'),
-            'couverture'=>$request->get('couverture'),
-            'titre'=>$request->get('titre'),
+            'titre'=>$request->input('titre'),
+            'description'=>$request->input('description'),
+            'tags'=>$request->input('tags'),
+            'genre'=>$request->input('genre'),
+            'sous_genre'=>$request->input('sous_genre'),
+            'yt_link'=>$request->input('yt_link'),
+            'audio_link'=>$request->input('audio_link'),
+            'studio_enregistrement'=>$request->input('studio_enregistrement'),
+            'annee_enregistrement'=>$request->input('annee_enregistrement'),
+            'realisateur'=>$request->input('realisateur'),
+            'auteur'=>$request->input('auteur'),
+            'version'=>$request->input('version'),
+            'pochette'=>$request->input('pochette'),
+            'couverture'=>$request->input('couverture'),
+            'slug'=>Str::slug($request->input('titre'), '-'),
         );
 
+        //dd($data);
+        Musique::create($data);
         return $this->index();
     }
 }

@@ -32,12 +32,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->name('dashboard');
 
-Route::resource('administration', AdminController::class, ['names' => [
-    'index' => 'admin.index',
-    'show' => 'admin.show',
-]])->only(['index', 'show']);
-
-
 /*Route::resource('administration/artiste', ArtisteController::class, ['names' => [
     'index' => 'artiste.index',
     'show' => 'artiste.show',
@@ -52,10 +46,13 @@ Route::resource('administration', AdminController::class, ['names' => [
     'create' => 'musique.create',
 ]]);*/
 
-
 Route::prefix('administration')->group(function () {
 
     Route::resource('musique',MusiqueController::class);
     Route::resource('artiste', ArtisteController::class);
+    Route::resource('/', AdminController::class, ['names' => [
+        'index' => 'admin.index',
+        'show' => 'admin.show',
+    ]])->only(['index', 'show']);
 
 });

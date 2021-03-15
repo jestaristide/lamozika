@@ -4096,7 +4096,7 @@ __webpack_require__.r(__webpack_exports__);
       e.preventDefault();
       this.addNewRs();
       console.log(this.newArtiste, this.$page.props);
-      this.$inertia.post('/lm-admin/artiste', this.newArtiste).then(function (response) {
+      this.$inertia.post('/administration/artiste', this.newArtiste).then(function (response) {
         console.log('dsfsdf 0 ' + response);
       });
     },
@@ -4458,7 +4458,7 @@ import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css
 import FilePondPluginFileValidateType from "filepond-plugin-file-validate-type";
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 
-// Create component 
+// Create component
 setOptions({
     server: '/api/admin/upload',
     headers: {
@@ -4493,6 +4493,7 @@ const FilePond = vueFilePond(
     addNewMusique: function addNewMusique(e) {
       e.preventDefault();
       console.log(this.newMusique, this.$page.props);
+      this.$inertia.post('/administration/musique', this.newMusique);
     },
     onChange: function onChange(e) {
       this.file = e.target.files[0];
@@ -4580,6 +4581,52 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _MusiqueLayout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MusiqueLayout */ "./resources/js/Pages/Admin/Musique/MusiqueLayout.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -36052,9 +36099,7 @@ var render = function() {
                 _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col-md-6 mb-3" }, [
                     _c("div", [
-                      _c("label", { attrs: { for: "first_name" } }, [
-                        _vm._v("Titre")
-                      ]),
+                      _c("label", [_vm._v("Titre")]),
                       _vm._v(" "),
                       _c("input", {
                         directives: [
@@ -36090,17 +36135,15 @@ var render = function() {
                   _vm._v(" "),
                   _c("div", { staticClass: "col-md-6 mb-3" }, [
                     _c("div", [
-                      _c("label", { attrs: { for: "last_name" } }, [
-                        _vm._v("Rythme")
-                      ]),
+                      _c("label", [_vm._v("Artiste")]),
                       _vm._v(" "),
                       _c("input", {
                         directives: [
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.newMusique.genre,
-                            expression: "newMusique.genre"
+                            value: _vm.newMusique.artistes,
+                            expression: "newMusique.artistes"
                           }
                         ],
                         staticClass: "form-control",
@@ -36109,7 +36152,7 @@ var render = function() {
                           placeholder: "Rythme",
                           required: ""
                         },
-                        domProps: { value: _vm.newMusique.genre },
+                        domProps: { value: _vm.newMusique.artistes },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
@@ -36117,7 +36160,7 @@ var render = function() {
                             }
                             _vm.$set(
                               _vm.newMusique,
-                              "genre",
+                              "artistes",
                               $event.target.value
                             )
                           }
@@ -36129,9 +36172,7 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", { staticClass: "row align-items-center" }, [
                   _c("div", { staticClass: "col-md-12 mb-3" }, [
-                    _c("label", { attrs: { for: "birthday" } }, [
-                      _vm._v("Description")
-                    ]),
+                    _c("label", [_vm._v("Description")]),
                     _vm._v(" "),
                     _c("div", { staticClass: "input-group" }, [
                       _c("textarea", {
@@ -36166,9 +36207,7 @@ var render = function() {
                 _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col-md-6 mb-3" }, [
                     _c("div", { staticClass: "form-group" }, [
-                      _c("label", { attrs: { for: "email" } }, [
-                        _vm._v("Url YouTube")
-                      ]),
+                      _c("label", [_vm._v("Url YouTube")]),
                       _vm._v(" "),
                       _c("input", {
                         directives: [
@@ -36204,9 +36243,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("div", { staticClass: "col-md-6 mb-3" }, [
                     _c("div", { staticClass: "form-group" }, [
-                      _c("label", { attrs: { for: "phone" } }, [
-                        _vm._v("Url Audio")
-                      ]),
+                      _c("label", [_vm._v("Url Audio")]),
                       _vm._v(" "),
                       _c("input", {
                         directives: [
@@ -36244,9 +36281,7 @@ var render = function() {
                 _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col-md-6 mb-3" }, [
                     _c("div", [
-                      _c("label", { attrs: { for: "first_name" } }, [
-                        _vm._v("Auteur")
-                      ]),
+                      _c("label", [_vm._v("Auteur")]),
                       _vm._v(" "),
                       _c("input", {
                         directives: [
@@ -36278,9 +36313,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("div", { staticClass: "col-md-6 mb-3" }, [
                     _c("div", [
-                      _c("label", { attrs: { for: "last_name" } }, [
-                        _vm._v("Compositeur")
-                      ]),
+                      _c("label", [_vm._v("Compositeur")]),
                       _vm._v(" "),
                       _c("input", {
                         directives: [
@@ -36314,17 +36347,15 @@ var render = function() {
                 _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col-md-6 mb-3" }, [
                     _c("div", [
-                      _c("label", { attrs: { for: "first_name" } }, [
-                        _vm._v("Genre")
-                      ]),
+                      _c("label", [_vm._v("Genre")]),
                       _vm._v(" "),
                       _c("input", {
                         directives: [
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.newMusique.specialite,
-                            expression: "newMusique.specialite"
+                            value: _vm.newMusique.genre,
+                            expression: "newMusique.genre"
                           }
                         ],
                         staticClass: "form-control",
@@ -36333,7 +36364,7 @@ var render = function() {
                           placeholder: "Genre",
                           required: ""
                         },
-                        domProps: { value: _vm.newMusique.specialite },
+                        domProps: { value: _vm.newMusique.genre },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
@@ -36341,7 +36372,7 @@ var render = function() {
                             }
                             _vm.$set(
                               _vm.newMusique,
-                              "specialite",
+                              "genre",
                               $event.target.value
                             )
                           }
@@ -36352,17 +36383,15 @@ var render = function() {
                   _vm._v(" "),
                   _c("div", { staticClass: "col-md-6 mb-3" }, [
                     _c("div", [
-                      _c("label", { attrs: { for: "last_name" } }, [
-                        _vm._v("Sous genre")
-                      ]),
+                      _c("label", [_vm._v("Sous genre")]),
                       _vm._v(" "),
                       _c("input", {
                         directives: [
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.newMusique.origine,
-                            expression: "newMusique.origine"
+                            value: _vm.newMusique.sous_genre,
+                            expression: "newMusique.sous_genre"
                           }
                         ],
                         staticClass: "form-control",
@@ -36371,7 +36400,7 @@ var render = function() {
                           placeholder: "Sous genre",
                           required: ""
                         },
-                        domProps: { value: _vm.newMusique.origine },
+                        domProps: { value: _vm.newMusique.sous_genre },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
@@ -36379,7 +36408,7 @@ var render = function() {
                             }
                             _vm.$set(
                               _vm.newMusique,
-                              "origine",
+                              "sous_genre",
                               $event.target.value
                             )
                           }
@@ -36392,9 +36421,7 @@ var render = function() {
                 _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col-md-6 mb-3" }, [
                     _c("div", [
-                      _c("label", { attrs: { for: "first_name" } }, [
-                        _vm._v("Studio d'enregistrement")
-                      ]),
+                      _c("label", [_vm._v("Studio d'enregistrement")]),
                       _vm._v(" "),
                       _c("input", {
                         directives: [
@@ -36432,9 +36459,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("div", { staticClass: "col-md-6 mb-3" }, [
                     _c("div", [
-                      _c("label", { attrs: { for: "last_name" } }, [
-                        _vm._v("Année d'enregistrement")
-                      ]),
+                      _c("label", [_vm._v("Année d'enregistrement")]),
                       _vm._v(" "),
                       _c("input", {
                         directives: [
@@ -36474,7 +36499,7 @@ var render = function() {
                 _c("div", { staticClass: "row" }, [
                   _c("div", { staticClass: "col-md-6 mb-3" }, [
                     _c("div", [
-                      _c("label", { attrs: { for: "first_name" } }),
+                      _c("label"),
                       _vm._v(" "),
                       _c("input", {
                         directives: [
@@ -36510,17 +36535,15 @@ var render = function() {
                   _vm._v(" "),
                   _c("div", { staticClass: "col-md-6 mb-3" }, [
                     _c("div", [
-                      _c("label", { attrs: { for: "last_name" } }, [
-                        _vm._v("Tags")
-                      ]),
+                      _c("label", [_vm._v("Tags")]),
                       _vm._v(" "),
                       _c("input", {
                         directives: [
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.newMusique.tag,
-                            expression: "newMusique.tag"
+                            value: _vm.newMusique.tags,
+                            expression: "newMusique.tags"
                           }
                         ],
                         staticClass: "form-control",
@@ -36529,13 +36552,17 @@ var render = function() {
                           placeholder: "Sous genre",
                           required: ""
                         },
-                        domProps: { value: _vm.newMusique.tag },
+                        domProps: { value: _vm.newMusique.tags },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
-                            _vm.$set(_vm.newMusique, "tag", $event.target.value)
+                            _vm.$set(
+                              _vm.newMusique,
+                              "tags",
+                              $event.target.value
+                            )
                           }
                         }
                       })
@@ -36656,7 +36683,177 @@ var render = function() {
       _c("div", { staticClass: "col-12" }, [
         _c("div", { staticClass: "card border-light shadow-sm mb-4" }, [
           _c("div", { staticClass: "card-body" }, [
-            _vm._v("\n                Musiques Liste\n                ")
+            _c("div", { staticClass: "table-responsive" }, [
+              _c(
+                "table",
+                {
+                  staticClass: "table table-centered table-nowrap mb-0 rounded"
+                },
+                [
+                  _c("thead", { staticClass: "thead-light" }, [
+                    _c("tr", [
+                      _c("th", { staticClass: "border-0" }, [_vm._v("#")]),
+                      _vm._v(" "),
+                      _c("th", { staticClass: "border-0" }, [_vm._v("Titre")]),
+                      _vm._v(" "),
+                      _c("th", { staticClass: "border-0" }, [
+                        _vm._v("Version")
+                      ]),
+                      _vm._v(" "),
+                      _c("th", { staticClass: "border-0" }, [
+                        _vm._v("Artiste")
+                      ]),
+                      _vm._v(" "),
+                      _c("th", { staticClass: "border-0" }, [_vm._v("Email")]),
+                      _vm._v(" "),
+                      _c("th", { staticClass: "border-0" }, [
+                        _vm._v("Oeuvres sur LM")
+                      ]),
+                      _vm._v(" "),
+                      _c("th", { staticClass: "border-0" }, [_vm._v("Action")])
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.musiques, function(row, key) {
+                      return _c("tr", { key: key }, [
+                        _c("td", { staticClass: "border-0" }, [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "text-primary font-weight-bold",
+                              attrs: { href: "#" }
+                            },
+                            [_vm._v(_vm._s(row.id))]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("td", { staticClass: "border-0 font-weight-bold" }, [
+                          _vm._v(_vm._s(row.titre))
+                        ]),
+                        _vm._v(" "),
+                        _c("td", { staticClass: "border-0" }, [
+                          _vm._v(_vm._s(row.version))
+                        ]),
+                        _vm._v(" "),
+                        _c("td", { staticClass: "border-0" }),
+                        _vm._v(" "),
+                        _c("td", { staticClass: "border-0" }, [
+                          _vm._v(_vm._s(row.tags))
+                        ]),
+                        _vm._v(" "),
+                        _c("td", { staticClass: "border-0" }, [
+                          _vm._v(_vm._s(row.auteur + " / " + row.compositeur))
+                        ]),
+                        _vm._v(" "),
+                        _c("td", { staticClass: "border-0 text-success" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center"
+                            },
+                            [
+                              _c("div", { staticClass: "btn-group" }, [
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass:
+                                      "btn btn-link text-dark dropdown-toggle dropdown-toggle-split m-0 p-0",
+                                    attrs: {
+                                      "data-toggle": "dropdown",
+                                      "aria-haspopup": "true",
+                                      "aria-expanded": "false"
+                                    }
+                                  },
+                                  [
+                                    _c(
+                                      "span",
+                                      { staticClass: "icon icon-sm" },
+                                      [
+                                        _c("span", {
+                                          staticClass:
+                                            "fas fa-ellipsis-h icon-dark"
+                                        })
+                                      ]
+                                    )
+                                  ]
+                                ),
+                                _vm._v(" "),
+                                _c(
+                                  "div",
+                                  { staticClass: "dropdown-menu" },
+                                  [
+                                    _c(
+                                      "inertia-link",
+                                      {
+                                        staticClass: "dropdown-item",
+                                        attrs: {
+                                          href: _vm.route("musique.edit", 1)
+                                        }
+                                      },
+                                      [
+                                        _c("span", {
+                                          staticClass: "fas fa-eye mr-2"
+                                        }),
+                                        _vm._v(
+                                          "Prevoir\n                                                "
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "inertia-link",
+                                      {
+                                        staticClass: "dropdown-item",
+                                        attrs: {
+                                          href: _vm.route(
+                                            "musique.edit",
+                                            row.id
+                                          )
+                                        }
+                                      },
+                                      [
+                                        _c("span", {
+                                          staticClass: "fas fa-edit mr-2"
+                                        }),
+                                        _vm._v(
+                                          "Modifier\n                                                "
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "a",
+                                      {
+                                        staticClass:
+                                          "dropdown-item text-danger",
+                                        attrs: { href: "#" }
+                                      },
+                                      [
+                                        _c("span", {
+                                          staticClass: "fas fa-trash-alt mr-2"
+                                        }),
+                                        _vm._v(
+                                          "Supprimer\n                                                "
+                                        )
+                                      ]
+                                    )
+                                  ],
+                                  1
+                                )
+                              ])
+                            ]
+                          )
+                        ])
+                      ])
+                    }),
+                    0
+                  )
+                ]
+              )
+            ])
           ])
         ])
       ])

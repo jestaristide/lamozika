@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-12 col-xl-12">
                 <div class="card card-body bg-white border-light shadow-sm mb-4">
-                    
+
                     <h2 class="h5 mb-4">Informations personnelles</h2>
                         <form @submit="addNewMusique" enctype="multipart/form-data">
                             <div class="row">
@@ -27,20 +27,20 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <div>
-                                        <label for="first_name">Titre</label>
+                                        <label>Titre</label>
                                         <input class="form-control" v-model="newMusique.titre" type="text" placeholder="Titre de la chanson" required="">
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <div>
-                                        <label for="last_name">Rythme</label>
-                                        <input class="form-control"  v-model="newMusique.genre" type="text" placeholder="Rythme" required="">
+                                        <label>Artiste</label>
+                                        <input class="form-control"  v-model="newMusique.artistes" type="text" placeholder="Rythme" required="">
                                     </div>
                                 </div>
                             </div>
                             <div class="row align-items-center">
                                 <div class="col-md-12 mb-3">
-                                    <label for="birthday">Description</label>
+                                    <label>Description</label>
                                     <div class="input-group">
                                         <textarea class="form-control" v-model="newMusique.description" rows="4"></textarea>
                                      </div>
@@ -49,13 +49,13 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <div class="form-group">
-                                        <label for="email">Url YouTube</label>
+                                        <label>Url YouTube</label>
                                         <input class="form-control" v-model="newMusique.yt_link" type="text" placeholder="https://" required="">
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <div class="form-group">
-                                        <label for="phone">Url Audio</label>
+                                        <label>Url Audio</label>
                                         <input class="form-control" v-model="newMusique.audio_link" type="text" placeholder="https://" required="">
                                     </div>
                                 </div>
@@ -64,13 +64,13 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <div>
-                                        <label for="first_name">Auteur</label>
+                                        <label>Auteur</label>
                                         <input class="form-control" v-model="newMusique.auteur" type="text" placeholder="Auteur">
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <div>
-                                        <label for="last_name">Compositeur</label>
+                                        <label>Compositeur</label>
                                         <input class="form-control" v-model="newMusique.compositeur" type="text" placeholder="Compositeur">
                                     </div>
                                 </div>
@@ -79,14 +79,14 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <div>
-                                        <label for="first_name">Genre</label>
-                                        <input class="form-control" v-model="newMusique.specialite" type="text" placeholder="Genre" required="">
+                                        <label>Genre</label>
+                                        <input class="form-control" v-model="newMusique.genre" type="text" placeholder="Genre" required="">
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <div>
-                                        <label for="last_name">Sous genre</label>
-                                        <input class="form-control" v-model="newMusique.origine" type="text" placeholder="Sous genre" required="">
+                                        <label>Sous genre</label>
+                                        <input class="form-control" v-model="newMusique.sous_genre" type="text" placeholder="Sous genre" required="">
                                     </div>
                                 </div>
                             </div>
@@ -94,13 +94,13 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <div>
-                                        <label for="first_name">Studio d'enregistrement</label>
+                                        <label>Studio d'enregistrement</label>
                                         <input class="form-control" v-model="newMusique.studio_enregistrement" type="text" placeholder="Genre" required="">
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <div>
-                                        <label for="last_name">Année d'enregistrement</label>
+                                        <label>Année d'enregistrement</label>
                                         <input class="form-control" v-model="newMusique.annee_enregistrement" type="text" placeholder="Sous genre" required="">
                                     </div>
                                 </div>
@@ -109,14 +109,14 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <div>
-                                        <label for="first_name"></label>
+                                        <label></label>
                                         <input class="form-control" v-model="newMusique.realisateur" type="text" placeholder="Genre" required="">
                                     </div>
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <div>
-                                        <label for="last_name">Tags</label>
-                                        <input class="form-control" v-model="newMusique.tag" type="text" placeholder="Sous genre" required="">
+                                        <label>Tags</label>
+                                        <input class="form-control" v-model="newMusique.tags" type="text" placeholder="Sous genre" required="">
                                     </div>
                                 </div>
                             </div>
@@ -151,7 +151,7 @@ import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.min.css
 import FilePondPluginFileValidateType from "filepond-plugin-file-validate-type";
 import FilePondPluginImagePreview from "filepond-plugin-image-preview";
 
-// Create component 
+// Create component
 setOptions({
     server: '/api/admin/upload',
     headers: {
@@ -184,6 +184,7 @@ export default {
         addNewMusique (e) {
             e.preventDefault()
             console.log(this.newMusique, this.$page.props)
+            this.$inertia.post('/administration/musique', this.newMusique)
         },
         onChange(e) {
                 this.file = e.target.files[0];

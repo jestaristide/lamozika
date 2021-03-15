@@ -170,7 +170,7 @@ export default {
             e.preventDefault()
             this.addNewRs()
             console.log(this.newArtiste, this.$page.props)
-            this.$inertia.post('/lm-admin/artiste', this.newArtiste).then((response) => {
+            this.$inertia.post('/administration/artiste', this.newArtiste).then((response) => {
                 console.log('dsfsdf 0 ' + response)
             })
         },
